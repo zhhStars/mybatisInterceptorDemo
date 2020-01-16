@@ -105,7 +105,7 @@ public class PageInterceptor implements Interceptor{
 						break;
 					default:
 				}
-				// 修改sql语句
+				// 反射修改sql语句
 				Field field = boundSql.getClass().getDeclaredField("sql");
 				field.setAccessible(true);
 				field.set(boundSql, pageSql.toString());
