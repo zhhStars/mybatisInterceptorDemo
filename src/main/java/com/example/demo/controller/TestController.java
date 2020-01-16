@@ -23,10 +23,9 @@ public class TestController {
     @RequestMapping(value = "/getList", method = RequestMethod.POST)
     public Object getList(@RequestBody Page page){
         try {
-            List<Role> list = testService.getList(page);
             result.put("code", 200);
             result.put("message", "查询成功");
-            result.put("data", list);
+            result.put("data", testService.getList(page));
         }catch (Exception e){
             e.printStackTrace();
         }

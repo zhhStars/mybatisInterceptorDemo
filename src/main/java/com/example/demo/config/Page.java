@@ -9,7 +9,7 @@ public class Page{
 	private int PageCount;	// 总页数
 	private int totalNumber;// 总条数
 	private int start; // 起始位置
-	private HashMap<String, String> param = new HashMap<>();
+	private HashMap<String, Object> param = new HashMap<>();
 
 	public int getCurrentPage() {
 		if (this.currentPage <= 0)
@@ -54,11 +54,11 @@ public class Page{
 		this.totalNumber = totalNumber;
 	}
 
-	public HashMap<String, String> getParam() {
+	public HashMap<String, Object> getParam() {
 		return param;
 	}
 
-	public void setParam(HashMap<String, String> param) {
+	public void setParam(HashMap<String, Object> param) {
 		this.param = param;
 	}
 

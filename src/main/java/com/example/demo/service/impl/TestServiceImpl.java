@@ -15,7 +15,8 @@ public class TestServiceImpl implements TestService {
     private TestMapper testMapper;
 
     @Override
-    public List<Role> getList(Page page) {
-        return testMapper.getRoleList(page);
+    public Page getList(Page page) {
+        page.getParam().put("data", testMapper.getRoleList(page));
+        return page;
     }
 }

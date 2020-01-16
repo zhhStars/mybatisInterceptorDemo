@@ -6,5 +6,5 @@ import com.example.demo.entity.Role;
 import java.util.List;
 
 public interface TestService {
-    List<Role> getList(Page page);
+    Page getList(Page page);
 }
