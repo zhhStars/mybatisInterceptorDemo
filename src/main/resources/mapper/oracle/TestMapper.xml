@@ -5,4 +5,21 @@
 	<select id="getRoleList" resultType="com.example.demo.entity.Role" databaseId="oracle">
 		SELECT * FROM "role"
 	</select>
+
+	<insert id="batchInsert" parameterType="java.util.List" databaseId="oracle">
+		insert all
+		<foreach collection="list" item="role" index="index">
+			INTO "role"
+				("id","create_date","description","is_deleted","role_name")
+			values
+				(
+					#{role.id,jdbcType=VARCHAR},
+					sysdate,
+					#{role.description,jdbcType=VARCHAR},
+					#{role.isDeleted,jdbcType=VARCHAR},
+					#{role.roleName,jdbcType=VARCHAR}
+				)
+		</foreach>
+		SELECT 1 FROM DUAL
+	</insert>
 </mapper>

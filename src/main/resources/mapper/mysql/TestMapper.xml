@@ -5,4 +5,19 @@
 	<select id="getRoleList" resultType="com.example.demo.entity.Role" databaseId="mysql">
 		SELECT * FROM role
 	</select>
+
+	<insert id="batchInsert" parameterType="java.util.List" databaseId="mysql">
+		INSERT INTO role
+		("id","create_date","description","is_deleted","role_name")
+		VALUES
+		<foreach collection="list" item="role" index="index" separator=",">
+		(
+			#{role.id,jdbcType=VARCHAR},
+			now(),
+			#{role.description,jdbcType=VARCHAR},
+			#{role.isDeleted,jdbcType=VARCHAR},
+			#{role.roleName,jdbcType=VARCHAR}
+		)
+		</foreach>
+	</insert>
 </mapper>

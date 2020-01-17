@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface TestMapper {
     List<Role> getRoleList(Page page);
+
+    int batchInsert(List<Role> list);
 }

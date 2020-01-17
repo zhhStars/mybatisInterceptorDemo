@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TestService {
     Page getList(Page page);
+
+    void batchInsert(List<Role> list);
 }

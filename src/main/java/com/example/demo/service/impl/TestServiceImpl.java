@@ -19,4 +19,10 @@ public class TestServiceImpl implements TestService {
         page.getParam().put("data", testMapper.getRoleList(page));
         return page;
     }
+
+    @Override
+    public void batchInsert(List<Role> list) {
+        System.out.println(testMapper.batchInsert(list));
+    }
+
 }
