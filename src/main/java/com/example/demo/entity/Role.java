@@ -83,4 +83,20 @@ public class Role {
     public void setIsAdministrators(String isAdministrators) {
         this.isAdministrators = isAdministrators;
     }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "id='" + id + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", creatorUser='" + creatorUser + '\'' +
+                ", description='" + description + '\'' +
+                ", isDeleted='" + isDeleted + '\'' +
+                ", roleName='" + roleName + '\'' +
+                ", updateDate='" + updateDate + '\'' +
+                ", updateUser='" + updateUser + '\'' +
+                ", isAdministrators='" + isAdministrators + '\'' +
+                '}';
+    }
 }
+

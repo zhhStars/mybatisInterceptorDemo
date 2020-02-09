@@ -34,4 +34,16 @@ class DemoApplicationTests {
         }
     }
 
+    @Test
+    void test1(){
+        List<Role> list = new ArrayList<>();
+        Role role = new Role();
+        role.setIsDeleted("0");
+        list.add(role);
+        list.forEach(a-> System.out.println(a));
+
+        role.setRoleName("那是");
+        list.forEach(a-> System.out.println(a));
+    }
+
 }
