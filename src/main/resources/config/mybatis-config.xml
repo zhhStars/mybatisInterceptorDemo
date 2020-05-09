@@ -11,6 +11,11 @@
 		<setting name="callSettersOnNulls" value="true"/>
 	</settings>
 
+	<!-- 扫描实例类的包，会为实体类设置别名，在mapper.xml中 resultType直接写类名即可，不需要写类的全路径 -->
+	<typeAliases>
+		<package name="com.example.demo.entity" />
+	</typeAliases>
+
 	<!-- 指定自定义拦截器 -->
 	<plugins>
 		<plugin interceptor="com.example.demo.config.PageInterceptor">
