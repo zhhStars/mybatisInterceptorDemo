@@ -25,6 +25,7 @@ public class MybatisDataBaseConfig {
         p.setProperty("PostgreSQL", "postgres");
         databaseIdProvider.setProperties(p);
         return databaseIdProvider;
+
     }
 
 }
