@@ -1,18 +1,29 @@
 server:
   port: 9090
-
+#----------
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  config-location: classpath:config/mybatis-config.xml
+#----------
 spring:
   datasource:
     repository: com.example.demo.repository
+    type: com.zaxxer.hikari.HikariDataSource
     #url: jdbc:oracle:thin:@10.1.1.39:1521:cloud
     #username: cloud
     #password: cloud
     #driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:mysql://10.1.1.175:3306/cloud3?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/cloud3?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: root
     password: 111111
     driver-class-name: com.mysql.jdbc.Driver
+    schema-username: root
+    schema-password: 111111
+    schema:
+        - classpath:schema.sql
+    #always为始终执行初始化，embedded只初始化内存数据库（默认值）,如h2等，never为不执行初始化
+    initialization-mode: always
+    #遇到语句错误时是否继续
+    continue-on-error: true
 
-mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
-  config-location: classpath:config/mybatis-config.xml
+
